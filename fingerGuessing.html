@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>石头剪子布</title>
+    <link href="css/fingerGuessing.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="guess">
+        <!--游戏开始界面-->
+        <div id="start"><img src="images/start.jpg" id="startgame"></div>
+        <!--游戏记录界面-->
+        <div id="display">
+            <div class="text">
+                <h2>生命值</h2>
+                <p id="guesscount">10</p>
+                <h2>积分</h2>
+                <p id="integral">0</p>
+            </div>
+            <!--显示系统和玩家选择（石头剪子布）的图像-->
+            <img src="images/noselect.jpg" id="system"><img src="images/noselect.jpg" id="player">
+            <div class="text">
+                <h2>玩家</h2>
+                <p id="playerwincount">0</p>
+                <h2>系统</h2>
+                <p id="systemwincount">0</p>
+            </div>
+        </div>
+        <!--玩家选择界面-->
+        <div id="select">
+            <img src="images/1.jpg" id="playerselect1" title="布"><img src="images/2.jpg" id="playerselect2"
+                title="剪子"><img src="images/3.jpg" id="playerselect3" title="石头">
+        </div>
+        <!--游戏结束界面-->
+        <div id="over"></div>
+    </div>
+    <script src="js/fingerGuessing.js"></script>
+</body>
+
+</html>
