@@ -1,0 +1,74 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    font-family: "微软雅黑", "sans-serif";
+}
+#start {
+    cursor: pointer;
+}
+#guess {
+    max-width: 330px;
+    min-width: 260px;
+    margin: 0 auto;
+    height: 215px;
+    overflow: hidden;/*溢出部分不可见。*/
+}
+
+#over {
+    max-width: 330px;
+    min-width: 260px;
+    height: 215px;
+    background-image: url("../images/over.jpg");
+}
+
+#display, #select {
+    /*采用flex布局，子元素水平和垂直都居中。*/
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.text {
+    background-color: #6CD5CB;
+    min-width: 91px;
+}
+
+.text p {
+    color: #FFFFFF;
+}
+
+h2, p {
+    text-align: center;
+}
+
+h2 {
+    font-size: .8rem;
+}
+/*玩家选择石头剪子布图像时，不透明过渡效果。*/
+img[id^="playerselect"] {
+    transition: opacity 1s ease;
+    cursor: pointer;
+    opacity: 0.5;
+}
+img[id^="playerselect"]:hover {
+    opacity: 1;
+}
+
+#system, #player {
+    max-width: 72px;
+    min-width: 72px;
+    max-height: 80px;
+    min-height: 80px;
+}
+#system,#player{
+    margin:0 1px;
+}
+/*为后添加的元素预设的样式。*/
+#overmessage {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding-top: 95px;
+}
