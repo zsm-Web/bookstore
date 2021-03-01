@@ -225,4 +225,60 @@ nav ul a { transition:background-color 0.5s linear; }
 
 /* 响应式设计 */
 /* 屏幕宽度小于等于768px */
+@media screen and (max-width: 768px){
+   /* 页眉显示2行，logo和购物车占1行，站内搜索占1行 */
+   #page-top {grid-template-areas: 
+      "lg lg lg cr cr"
+      "sr sr sr sr sr"; }
+   /* 菜单项宽度变小，显示在1行上。 */
+   nav ul li { min-width: 153px; }
+   /* 内容顶部显示2行，图书分类和用户新闻占1行，横幅广告占1行 */
+   #main-content-top { grid-template-columns: repeat(2, 1fr);grid-template-rows: repeat(2,minmax(50px,auto)); } 
+   #classify{grid-row: 1/2; grid-column: 1/2; max-width: 358px;}
+   #user-news{grid-row: 1/2; grid-column: 2/3;max-width: 359px;}
+   #banner { grid-row: 2/3; grid-column: 1/3; }
+   /* 设置本周推荐、最近新书、最近促销内容单元可以换行。 */
+   .content{flex-flow: row wrap;}
+   .content-item{max-width: 244px;}
+}
+/* 屏幕宽度小于等于480px */
+@media screen and (max-width: 480px){
+  /* 页眉和导航菜单不再固定页面顶部 */
+  #sticky{position:relative;}
+  /* 菜单项宽度变小，显示在1行上。 */
+  nav ul li { min-width: 96px; }
+  /* 设置本周推荐、最近新书、最近促销内容单元1行显示2项。 */
+  .content-item{ min-width: 220px;max-width: 225px;}
+  #copyright{text-align: center;}
+}
+/* 屏幕宽度小于等于432px */
+@media screen and (max-width: 432px){
+   /* 页眉和导航菜单不再固定页面顶部 */
+   #sticky{position:relative;}
+   /* 菜单项宽度变小，显示在1行上。 */
+   nav ul li { min-width: 86px; }
+   /* 设置本周推荐、最近新书、最近促销内容单元1行显示2项。 */
+   .content-item{ min-width: 200px;max-width: 200px;}
+   #copyright{text-align: center;}
+ }
+/* 屏幕宽度小于等于320px */
+@media screen and (max-width: 320px){
+  /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
+  #page-top {grid-template-areas: 
+     "lg"
+     "cr"
+     "sr"; }
+  /* 菜单项宽度变小，字号变小，显示在1行上。 */
+  nav ul li a{font-size: 1rem;}
+  nav ul li { min-width: 63px; }
+  /* 页眉和导航菜单不再固定页面顶部 */
+  #sticky{position:relative;}
+  /* 内容顶部显示3行，图书分类、用户新闻、横幅广告各占1行 */
+  #main-content-top { grid-template-columns: repeat(1, 1fr);grid-template-rows: repeat(3,minmax(50px,auto)); } 
+  #classify{grid-row: 1/2; grid-column: 1/2; }
+  #user-news{grid-row: 2/3; grid-column: 1/2;}
+  #banner { grid-row: 3/4; grid-column: 1/2; }
 
+  .content-item{ min-width: 300px;}
+  #copyright{text-align: center;}
+}
