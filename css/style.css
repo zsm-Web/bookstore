@@ -226,7 +226,7 @@ nav ul a { transition:background-color 0.5s linear; }
 /* 响应式设计 */
 /* 屏幕宽度小于等于768px */
 /* 屏幕宽度小于等于320px */
-@media screen and (max-width: 410px){
+@media screen and (max-width: 390px){
    /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
    #page-top {grid-template-areas: 
       "lg"
@@ -243,6 +243,7 @@ nav ul a { transition:background-color 0.5s linear; }
    #user-news{grid-row: 2/3; grid-column: 1/2;}
    #banner { grid-row: 3/4; grid-column: 1/2; }
  
+   .content{flex-flow: row wrap;}
    .content-item{ min-width: 300px;}
    #copyright{text-align: center;}
  }
