@@ -226,7 +226,7 @@ nav ul a { transition:background-color 0.5s linear; }
 /* 响应式设计 */
 /* 屏幕宽度小于等于768px */
 /* 屏幕宽度小于等于320px */
-@media screen and (max-width: 390px){
+@media screen and (max-width: 410px){
    /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
    #page-top {grid-template-areas: 
       "lg"
