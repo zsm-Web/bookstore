@@ -252,7 +252,7 @@ nav ul a { transition:background-color 0.5s linear; }
   #copyright{text-align: center;}
 }
 /* 屏幕宽度小于等于320px */
-@media screen and (max-width: 400px){
+@media screen and (max-width: 360px){
   /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
   #page-top {grid-template-areas: 
      "lg"
