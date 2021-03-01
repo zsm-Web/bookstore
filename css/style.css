@@ -256,9 +256,9 @@ nav ul a { transition:background-color 0.5s linear; }
    /* 页眉和导航菜单不再固定页面顶部 */
    #sticky{position:relative;}
    /* 菜单项宽度变小，显示在1行上。 */
-   nav ul li { min-width: 80px; }
+   nav ul li { min-width: 60px; }
    /* 设置本周推荐、最近新书、最近促销内容单元1行显示2项。 */
-   .content-item{ min-width: 190px;max-width: 195px;}
+   .content-item{ min-width: 160px;max-width: 165px;}
    #copyright{text-align: center;}
  }
 /* 屏幕宽度小于等于320px */
