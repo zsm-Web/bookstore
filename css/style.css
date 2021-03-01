@@ -225,8 +225,9 @@ nav ul a { transition:background-color 0.5s linear; }
 
 /* 响应式设计 */
 /* 屏幕宽度小于等于768px */
-/* 屏幕宽度小于等于320px */
-@media screen and (max-width: 410px){
+
+/* 屏幕宽度小于等于360px逻辑分辨率 */
+@media screen and (max-width: 360px){
    /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
    #page-top {grid-template-areas: 
       "lg"
@@ -234,7 +235,7 @@ nav ul a { transition:background-color 0.5s linear; }
       "sr"; }
    /* 菜单项宽度变小，字号变小，显示在1行上。 */
    nav ul li a{font-size: 1rem;}
-   nav ul li { min-width: 63px; }
+   nav ul li { min-width: 70px; }
    /* 页眉和导航菜单不再固定页面顶部 */
    #sticky{position:relative;}
    /* 内容顶部显示3行，图书分类、用户新闻、横幅广告各占1行 */
@@ -244,6 +245,12 @@ nav ul a { transition:background-color 0.5s linear; }
    #banner { grid-row: 3/4; grid-column: 1/2; }
  
    .content{flex-flow: row wrap;}
-   .content-item{ min-width: 300px;}
+   .content-item{ min-width: 340px;}
    #copyright{text-align: center;}
+ }
+
+ /* 屏幕宽度小于等于320px逻辑分辨率 */
+@media screen and (max-width: 320px){
+   nav ul li { min-width: 64px; }
+   .content-item{ min-width: 300px;}
  }
