@@ -227,7 +227,8 @@ nav ul a { transition:background-color 0.5s linear; }
 /* 屏幕宽度小于等于720px逻辑分辨率 */
 @media screen and (max-width: 720px){
    /* 页眉显示2行，logo和购物车占1行，站内搜索占1行 */
-   #page-top {grid-template-areas: 
+   #page-top {
+      grid-template-areas: 
       "lg lg lg cr cr"
       "sr sr sr sr sr"; }
    /* 菜单项宽度变小，显示在1行上。 */
@@ -245,10 +246,11 @@ nav ul a { transition:background-color 0.5s linear; }
 /* 屏幕宽度小于等于360px逻辑分辨率 */
 @media screen and (max-width: 360px){
    /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
-   #page-top {grid-template-areas: 
-      "lg lg lg lg lg"
-      "cr cr cr cr cr"
-      "sr sr sr sr sr"; }
+   #page-top {grid-template-columns: 1fr;
+      grid-template-areas: 
+      "lg"
+      "cr"
+      "sr"; }
    #search {width:100%;}   
    /* 菜单项宽度变小，字号变小，显示在1行上。 */
    nav ul a{font-size: 1rem;padding: 0px;}
