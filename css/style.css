@@ -251,16 +251,6 @@ nav ul a { transition:background-color 0.5s linear; }
   .content-item{ min-width: 220px;max-width: 225px;}
   #copyright{text-align: center;}
 }
-/* 屏幕宽度小于等于420px */
-@media screen and (max-width: 420px){
-   /* 页眉和导航菜单不再固定页面顶部 */
-   #sticky{position:relative;}
-   /* 菜单项宽度变小，显示在1行上。 */
-   nav ul li { min-width: 60px; }
-   /* 设置本周推荐、最近新书、最近促销内容单元1行显示2项。 */
-   .content-item{ min-width: 160px;max-width: 165px;}
-   #copyright{text-align: center;}
- }
 /* 屏幕宽度小于等于320px */
 @media screen and (max-width: 320px){
   /* 页眉显示3行，logo、购物车、站内搜索各占1行 */
