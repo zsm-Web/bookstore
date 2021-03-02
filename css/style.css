@@ -276,3 +276,117 @@ nav ul a { transition:background-color 0.5s linear; }
    /* 菜单项字号缩小，显示在1行上。 */
    nav ul a{font-size: 95%;}
  }
+
+/* Chapter14 */
+/* 面包屑导航 */
+.crumb-nav{font-size: 1rem; margin: 1px 0px;background-color: hsla(85, 60%, 60%,0.1); padding: 6px 12px;}
+.crumb-nav a{text-decoration:none;font-size: 1em;color:hsl(150, 40%, 30%); }
+.crumb-nav a:hover {color: hsl(85, 55%, 50%);}
+
+/* 图书分类 category.html */
+.short ul{display: flex;flex-flow: row nowrap;}
+.short ul li{padding: 6px 12px;}
+.icon-sort1:before {content: "\f00a";}
+.icon-sort2:before {content: "\f00b";}
+.book{border: 1px solid hsl(85, 55%, 50%); padding: 12px;margin: 6px 0px;}
+.book,.book-body{display: flex; flex-flow: row wrap;}
+.book-left{flex: 1;}
+.book-body{flex: 2;}
+.col1{flex: 2;height: 100%;margin: 0px 12px;display: flex;flex-flow: column;}
+.col2{flex: 1;display: flex;flex-flow: column;justify-content:space-around;align-items: center;}
+.col1 h3,.col1 h4,.col1 h5{text-align: center;margin-bottom: 18px;}
+.col1 h4{background-color: hsla(85, 55%, 50%,0.4);color: hsl(150, 40%, 30%); padding:6px;}
+.col2 .btn-cart{background-color: hsl(150, 40%, 30%);color: hsl(0,100%,100%);padding: 6px 12px; border-radius:20px;}
+.col2 .btn-cart .icon-cart{color: hsl(0,100%,100%);}
+.icon-star:before {content: "\f005";}
+.icon-star{font-size: 1rem;color:hsl(40,95%,70%)}
+.checkbox,.rating{margin: 12px;}
+.checkbox li,.rating li{margin: 6px 0px;}
+.pagination{display: flex;flex-flow: row nowrap;margin: 6px 0px;}
+.pagination li{margin: 1px;background-color:hsla(85, 55%, 50%,0.4) ; width: 30px;height: 30px;text-align: center;display: flex;justify-content: center; align-items: center;}
+#browser{margin-top: 18px;}
+#browser .content{margin-top: 6px;}
+.styled:checked{outline: hsl(85, 55%, 50%) 1px solid;}
+.styled:checked +label{color: hsl(85, 55%, 50%);}
+/* 屏幕宽度小于等于720px逻辑分辨率 */
+@media screen and (max-width: 720px){
+   .book-body{flex-flow: column wrap;}
+   .book-left img{height: 50%;}
+}
+/* 屏幕宽度小于等于360px逻辑分辨率 */
+@media screen and (max-width: 360px){
+   .book{flex-flow: column wrap;}
+}
+
+/* 电子书 ebook.html */
+.list ul{display: grid;grid-template-columns: repeat(3,1fr);}
+.list ul li{border: hsl(85, 55%, 50%) 1px solid;margin: 6px;}
+#ulcart{display: grid; margin: 12px 6px;}
+#ulcart div{justify-self: center;}
+#ulcart div .icon-cart{font-size: 2rem;}
+#ulcart ul{margin-top: 6px;}
+.list-title{display: flex;flex-flow: row wrap;background-color: hsl(85, 55%, 50%);}
+.list-title span{color: hsl(0,100%,100%); flex: 1; text-align: center;padding: 6px;}
+.list-record {display: flex;flex-flow: row wrap;}
+.list-record span{color: hsl(85, 55%, 50%); flex: 1; border: hsl(85, 55%, 50%) 1px solid;margin: 1px;display: flex;justify-content: center;align-items: center;}
+/* 屏幕宽度小于等于360px逻辑分辨率 */
+@media screen and (max-width: 360px){
+   .list ul{grid-template-columns: 1fr;}
+   #main-content { flex-flow: column wrap;}
+}
+
+/* 客户服务 contact.html*/
+.contacts{margin-top: 1rem;}
+.contacts p{padding:10px;}
+.contact-form {border:hsl(85, 55%, 50%) 1px dashed;font-size:1.1rem; margin: 0 10px;}
+.form-subtitle {background:hsl(85, 55%, 50%);color:hsl(0,0%,100%);padding:2px 5px;}
+.contact-input {width:300px;border:hsl(0,0%,80%) 1px solid;}
+.form-row {padding:2px 10px;font-size: 1rem;}
+.form-row-button {margin:5px;}
+.send {color:hsl(0,0%,100%);height:30px;width:60px;text-align:center;background-color:hsl(85, 55%, 50%);border: 0px;font-size:1rem; }
+#message{visibility: hidden;}
+#submitmessage{padding: 12px;font-size: 1rem;}
+
+/* 关于我们 about.html */
+#advantage div{display: flex;flex-flow: row wrap;margin: 12px 6px;}
+#advantage div h4{flex: 1;}
+#advantage div meter{flex: 5;}
+#about-img{margin-bottom: 12px;}
+#team{display: flex;flex-flow: row wrap;}
+#team div{width: 25%; display: flex; flex-flow: column nowrap;justify-content: center;align-items: center;}
+/* 屏幕宽度小于等于360px逻辑分辨率 */
+@media screen and (max-width: 360px){
+   #team div{width: 50%;}
+}
+
+/* 详细内容 details.html */
+.title-bar{display: flex;flex-flow: row wrap;justify-content: flex-end;}
+.information{display: flex;flex-flow: row wrap;margin: 12px;}
+.information-cover{flex: 1; margin-right: 12px;}
+.information-title{flex: 2;}
+.information-content p{border: hsl(85, 55%, 40%) 1px solid;border-radius: 6px;margin: 12px 0px;padding: 12px;}
+.information-title h3{text-align: center; margin: 12px;}
+.information-title li{margin: 12px;}
+.information-title div{display: flex;flex-flow: row wrap;justify-content: center;}
+.information-context div{display: flex;flex-flow: row wrap;justify-content:space-between;}
+.read{background-color: hsl(85, 55%, 50%);display: block;text-align: center;border-radius: 10px; padding: 6px 36px;}
+.read:hover{color: hsl(0,100%,100%);}
+/* 屏幕宽度小于等于720px逻辑分辨率 */
+@media screen and (max-width: 720px){
+   .information{flex-flow: column wrap}
+}
+
+/* 购物车 cart.html */
+.cart-table h3{margin: 1rem 0;}
+/* 表格合并边框 */
+.cart-table table{font-size:1.2rem;width: 100%;border-collapse:collapse;margin: 10px 0px;}
+.cart-table tr,.cart-table td{border:1px solid hsl(85, 55%, 50%);}
+.cart-table td h4{font-size:1rem;}
+.cart-table img{width:60px;height:60px;}
+.cart-table td:first-child{text-align: center;}
+.cart-table td:nth-child(5),.cart-table td:nth-child(4),.cart-table td:nth-child(3){text-align: right;padding-right: 5px;}
+.cart-table tr:last-child a{font-size: 1.1rem;text-decoration: none;margin-left: 20px;}
+.cart-table tr:last-child a:hover{color:hsl(85, 55%, 50%); }
+/* 表格第一行和最后一行背景色 */
+.cart-table tr:first-child,.cart-table tr:last-child{line-height: 40px; text-align: center;}
+
