@@ -315,8 +315,6 @@ nav ul a { transition:background-color 0.5s linear; }
 }
 /* 屏幕宽度小于等于360px逻辑分辨率 */
 @media screen and (max-width: 360px){
-   /* 内容顶部不显示。 */
-   #main-content-top {display: none;}
    .book{flex-flow: column wrap;}
 }
 
