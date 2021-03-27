@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+<div>
+    <h2>18.6  模块</h2>
+    <p>模块（Module）不是对象，是通过export命令显式指定导出的代码，再通过import命令导入，无论是否声明了strict mode，模块都运行在严格模式下。如：</p>
+    <pre>
+        import { stat, exists, readFile } from 'fs';</pre>
+    <p>上面代码从fs模块加载3个方法，其他方法不加载。这种加载称为“编译时加载”或者静态加载，即可以在编译时就完成模块加载。</p>
+    <p>模块功能主要由两个命令构成：export和import。export用于规定模块的对外接口，import用于输入其他模块提供的功能。</p>
+    <h3>18.6.1  export语句</h3>
+    <p>模块是一个独立的文件，文件内部的所有变量，外面无法获取，如果希望在外面能够读取模块内部的变量，必须使用export。</p>
+    <p>export语句用于从模块中导出实时绑定的函数、对象或原始值，以便其他程序可以通过import语句使用它们。</p>
+    <p>exporte有二种导出方式：一是命名导出，每个模块可以定义多个命名导出。二是默认导出，每个模块只能定义一个导出。语法如下：</p>
+    <pre>
+        //导出单个
+        export let name1, name2, …, nameN;
+        export let name1 = …, name2 = …, …, nameN;
+        export function FunctionName(){...}
+        export class ClassName {...}
+        //导出列表
+        export { name1, name2, …, nameN };
+        //重命名导出
+        export { variable1 as name1, variable2 as name2, …, nameN };
+        //默认导出
+        export default expression;
+        export default function (…) { … }
+        export default function name1(…) { … }
+        export { name1 as default, … };
+    </pre>
+</div>
+</body>
+</html>

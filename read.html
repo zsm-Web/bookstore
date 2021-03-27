@@ -5,28 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web前端设计从入门到实战——HTML5、CSS3、JavaScript项目案例开发</title>
+    <title>试读</title>
     <meta name="keywords" content="网上书店,计算机,前端技术">
     <meta name="description" content="叮叮书店是销售信息技术及相关图书的垂直网站">
     <meta name="robots" content="index,follow">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
-    <script src="../js/main.js"></script>
     <script>
         window.onload = function () {
-            document.getElementById("chapter1-1-1").onclick = function () {
-                ajaxcontent("chapter1-1-1.html")
+            document.getElementById("chapter18-5").onclick = function () {
+                ajaxcontent("chapter18-5.html")
             }
-            document.getElementById("chapter1-1-2").onclick = function () {
-                ajaxcontent("chapter1-1-2.html")
+            document.getElementById("chapter18-6").onclick = function () {
+                ajaxcontent("chapter18-6.html")
             }
         }
+
         function ajaxcontent(pagename) {
-            var XHR;
+            let XHR;
             if (window.XMLHttpRequest) {
                 XHR = new XMLHttpRequest();
-            }
-            else {
+            } else {
                 XHR = new ActiveXObject("Microsoft.XMLHTTP");
             }
             XHR.onreadystatechange = function () {
@@ -38,7 +37,6 @@
             XHR.send();
         }
     </script>
-    <style></style>
 </head>
 
 <body>
@@ -97,54 +95,42 @@
                         <li><a href="#.">人工智能</a></li>
                         <li><a href="#.">网页制作</a></li>
                         <li><a href="#.">图形图像</a></li>
-                        
+
                     </ul>
                 </li>
                 <li><a href="ebook.html">电子书</a></li>
                 <li><a href="contact.html">客户服务</a></li>
                 <li><a href="about.html">关于我们</a></li>
-                
+
             </ul>
         </nav>
     </div>
     <!--内容-->
     <main class="center">
         <!--面包屑导航-->
-        <div class="crumb-nav">您现在的位置：<a href="index.html">首页</a> &gt; <a href="details.html">详细内容</a> &gt;
-            《Web前端设计从入门到实战——HTML5、CSS3、JavaScript项目案例开发》</div>
+        <div class="crumb-nav">您现在的位置：<a href="index.html">首页</a> &gt; <a href="details.html">详细内容</a> &gt; 试读</div>
         <!--主要内容-->
         <div id="main-content">
             <!-- 左边内容 -->
             <div id="main-content-left">
                 <section id="Ajaxcontent">
                     <h3>前 言</h3>
-                    <p>本书基于Web标准，结合作者长期从事Web开发和教学的实际经验，深入浅出地介绍了Web前端设计技术的基础知识。对Web体系结构、HTML5、CSS3、JavaScript和网站制作流程进行了详细的讲解，
-                        本书在编写过程中，强调理论与实践相结合，以实用为前提，包含大量应用实例，注重实际操作技能，力图使读者通过本书的学习，掌握Web前端设计开发的相关基础知识。
+                    <p>本书基于Web标准和响应式Web设计思想深入浅出地介绍了Web前端设计技术的基础知识，对Web体系结构、HTML5、CSS3、ES6和网站制作流程进行了详细的讲解，涵盖HTML5、CSS3和ES6最新内容，并以实战驱动知识点，以案例贯穿实战。内容翔实，结构合理，语言精炼，表达简明，实用性强，易于自学。
                     </p>
                 </section>
             </div>
             <!-- 右边边栏 -->
             <aside>
                 <div class="read-bar">
-                    <h4>《Web前端设计从入门到实战——HTML5、CSS3、JavaScript项目案例开发》</h4>
+                    <h4>《Web前端设计从入门到实战——HTML5、CSS3、ES6项目案例开发》</h4>
                     <h5>作者：张树明</h5>
+                    <h4>试读目录</h4>
                 </div>
                 <div class="read-list">
                     <dl>
-                        <dt>第1章 Web技术概述</dt>
-                        <dd><a href="#" id="chapter1-1-1">1.1 Internet概述</a></dd>
-                        <dd><a href="#" id="chapter1-1-2">1.2 Web概述</a></dd>
-                        <dd><a href="#">1.3 超文本与标记语言</a></dd>
-                        <dd><a href="#">1.4 Web标准</a></dd>
-                        <dd><a href="#">1.5 浏览器</a></dd>
-                        <dd><a href="#">1.6 Web开发工具</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>第2章 HTML5基础</dt>
-                        <dd><a href="#">2.1 HTML基础</a></dd>
-                        <dd><a href="#">2.2 WebStorm基础</a></dd>
-                        <dd><a href="#">2.3 文档结构元素</a></dd>
-                        <dd><a href="#">2.4 头部元素</a></dd>
+                        <dt>第18章  ECMAScript面向对象编程</dt>
+                        <dd><a href="#" id="chapter18-5">18.5  类</a></dd>
+                        <dd><a href="#" id="chapter18-6">18.6  模块</a></dd>
                     </dl>
                 </div>
             </aside>

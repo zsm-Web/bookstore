@@ -18,6 +18,36 @@
                 #main-content-top {display: none;}
             }
     </style>
+    <script>
+        window.addEventListener('load',function(){
+            //获取全部的图书商品
+            let oDrag = [...document.querySelectorAll(".img-list")];
+            //遍历每一个图书商品添加dragstart事件
+            oDrag.forEach(item => {
+                item.addEventListener("dragstart", function (e) {
+                    let oDtf = e.dataTransfer;
+                    oDtf.setData("text/html", `<li class='list-record'><span>${this.title}</span><span>${this.alt}</span><span>1</span><span>${this.alt}</span></li>`);
+                }, false);
+            });
+            let oCart = document.getElementById("ulcart");
+            //添加目标元素的drop事件行为
+            oCart.addEventListener("drop", function (e) {
+                let oDtf = e.dataTransfer;
+                let sHtml = oDtf.getData("text/html");
+                oCart.innerHTML += sHtml;
+                e.preventDefault();
+                e.stopPropagation();
+            }, false);
+            //添加页面的dragover事件行为
+            document.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            }, false);
+            //添加页面drop事件行为
+            document.addEventListener('drop', function (e) {
+                e.preventDefault();
+            }, false);
+        },false);
+    </script>
 </head>
 
 <body>
@@ -163,7 +193,7 @@
             </div>
         </header>
         <!--面包屑导航-->
-        <section class="crumb-nav">您现在的位置：<a href="index.html">首页</a> &gt;&gt;电子书</section>
+        <section class="crumb-nav">您现在的位置：<a href="index.html">首页</a> &gt; 电子书</section>
         <!--主要内容-->
         <div id="main-content">
             <!-- 左边内容 -->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{padding: 0px; margin: 0px;}
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>18.5  类</h2>
+        <p>ECMAScript传统方法是通过构造函数生成实例对象，为了更接近大多数面向对象语言的写法，引入了 Class（类）这个概念，通过class关键字，可以定义类。</p>
+        <h3>18.5.1  定义类</h3>
+        <h4>1.类声明</h4>
+        <p>class声明创建一个基于原型继承的具有给定名称的新类，类声明不允许再次声明已经存在的类，否则将会抛出一个类型错误。语法如下：</p>
+        <pre>
+          class name [extends] {
+            // class body
+          }</pre>
+        <p>下面代码中，定义了一个名为Point的类，里面有一个构造方法constructor()，还定义了一个toString()方法。定义toString()方法时不需要加上function关键字，方法和方法之间不需要逗号分隔，加了会报错。</p>
+        <pre>
+          class Point {
+            constructor(x, y) {
+              this.x = x;
+              this.y = y;
+            }
+            toString() {
+              return '(' + this.x + ', ' + this.y + ')';
+            }
+          }</pre>
+    </div>
+</body>
+
+</html>
