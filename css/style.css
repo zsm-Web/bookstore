@@ -390,3 +390,5 @@ nav ul a { transition:background-color 0.5s linear; }
 /* 表格第一行和最后一行背景色 */
 .cart-table tr:first-child,.cart-table tr:last-child{line-height: 40px; text-align: center;}
 
+/* 试读 read.html */
+.read-bar h4,.read-bar h5{display: flex;justify-content: center;align-items: center;}
