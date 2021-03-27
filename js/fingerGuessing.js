@@ -1,6 +1,6 @@
 var iGuesscount; //生命值
 var iPlayerwincount; //玩家赢的次数
-var iSystemwincount; //系统赢的次数
+var iSystemwincount; //AI赢的次数
 var iIntegral; //积分
 document.getElementById("startgame").addEventListener("click", start);
 //开始游戏进行初始化设置。
@@ -19,16 +19,13 @@ function start() {
     document.getElementById("system").src = "images/noselect.jpg";
     document.getElementById("player").src = "images/noselect.jpg";
 }
-document.getElementById("playerselect1").addEventListener("click", function () {
-    submitguess(1);
-},false);
-document.getElementById("playerselect2").addEventListener("click", function () {
-    submitguess(2);
-},false);
-document.getElementById("playerselect3").addEventListener("click", function () {
-    submitguess(3);
-},false);
-//计算系统赢的次数。
+var select = [...document.querySelectorAll('#select img')];
+select.forEach((element,index) => {
+    element.addEventListener('click', function () {
+        submitguess(index + 1);
+    }, false);
+});
+//计算AI赢的次数。
 function fSystemwin() {
     iSystemwincount++;
     document.getElementById("systemwincount").textContent = iSystemwincount.toString();
@@ -46,8 +43,8 @@ function integral(add) {
 //根据玩家选择进行处理。
 function submitguess(guess) {
     system = Math.floor(Math.random() * 3 + 1);
-    document.getElementById("system").src = "images/" + system.toString() + "1.jpg";
-    document.getElementById("player").src = "images/" + guess.toString() + ".jpg";
+    document.getElementById("system").src = `images/${system.toString()}1.jpg`;
+    document.getElementById("player").src = `images/${guess.toString()}.jpg`;
     if (guess == 1) {
         if (system == 1) integral(1)
         if (system == 2) fSystemwin()
@@ -79,16 +76,15 @@ function submitguess(guess) {
         document.getElementById("start").style.display = "none";
         document.getElementById("display").style.display = "none";
         document.getElementById("select").style.display = "none";
-        var h2 = document.createElement('h2');
-        h2.textContent = "本次游戏你战胜了系统" + iPlayerwincount.toString() + "次，胜率" + (iPlayerwincount / 10 * 100).toString() + "%，继续加油！";
+        let h2 = document.createElement('h2');
+        h2.textContent = `本次游戏你战胜了AI ${iPlayerwincount.toString()} 次，胜率${(iPlayerwincount / 10 * 100).toString()}%，继续加油！`;
         h2.setAttribute("id", "overmessage");
         document.getElementById('over').appendChild(h2);
     }
 }
-document.getElementById("over").addEventListener("click", end,false);
+document.getElementById("over").addEventListener("click", end, false);
 //回到游戏开始。
 function end() {
     document.getElementById("start").style.display = "flex";
-    var oH2 = document.getElementById("overmessage");
-    oH2.parentNode.removeChild(oH2);
+    document.getElementById("overmessage").parentNode.removeChild(oH2);
 }

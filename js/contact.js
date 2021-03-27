@@ -1,43 +1,51 @@
-/**
- * Created by Administrator on 16-6-23.
- */
-window.onload = function () {
-    //让姓名文本框获得焦点。
-    document.getElementById("name").focus();
-    // if(document.getElementById("contact")!=null){
-        document.getElementById("contact").onsubmit=function(){
-            var sName=document.getElementById("name").value;
-            var sEmail=document.getElementById("email").value;
-            var sTelephone=document.getElementById("telephone").value;
-            var sCompany=document.getElementById("company").value;
-            var oSex=document.getElementsByName("sex");
-            //获得性别选项值。
-            for(iCv=0;iCv<oSex.length;iCv++){
-                if(oSex.item(iCv).checked){
-                    sSex=oSex.item(iCv).value;
-                }
+//让姓名文本框获得焦点。
+document.getElementById("name").focus();
+var form = document.getElementById('contact');
+form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+        event.preventDefault();
+        return;
+    } else {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let telephone = document.getElementById("telephone").value;
+        let company = document.getElementById("company").value;
+        let sex = [...document.getElementsByName("sex")];
+        //获得性别选项值。
+        sex.forEach(item => {
+            if (item.checked) {
+                sexStr = item.value;
             }
-            var oAge=document.getElementById("age");
-            //获得年龄选项值。
-            for(iCv=0;iCv<oAge.options.length;iCv++){
-                if(oAge.options[iCv].selected){
-                    sAge=oAge.options[iCv].firstChild.nodeValue;
-                }
+        });
+        let age = [...document.getElementById("age").options];
+        //获得年龄选项值。
+        age.forEach(item => {
+            if (item.selected) {
+                ageStr = item.firstChild.nodeValue;
             }
-            var sInterest="";//获得爱好选项值。
-            var oInterest=document.getElementsByName("interest");
-            for(iCv=0;iCv<oInterest.length;iCv++){
-                if(oInterest.item(iCv).checked){
-                    sInterest+=oInterest.item(iCv).value;
-                }
+        });
+        let interestStr = ""; //获得爱好选项值。
+        let interest = [...document.getElementsByName("interest")];
+        interest.forEach(item => {
+            if (item.checked) {
+                interestStr += item.value;
             }
-            document.getElementById("message").style.visibility="visible";
-            document.getElementById("submitmessage").innerHTML="姓名："+sName+"<br>性别："+sSex+"<br>年龄范围："+sAge+"<br>爱好："+sInterest+"<br>电子邮件："+sEmail+"<br>固定电话："+sTelephone+"<br>公司："+sCompany;
-            //不提交表单。
-            return false;
-            //提交表单。
-            // return true;
-        }
-    // }
-}
+        });
+        document.getElementById("message").style.visibility = "visible";
+        document.getElementById("submitmessage").innerText = `姓名：${name}
+        性别：${sexStr}
+        年龄范围：${ageStr}
+        爱好：${interestStr}
+        电子邮件：${email}
+        固定电话：${telephone}
+        公司：${company}`;
+        event.preventDefault();
+        setTimeout("delay()", 2000);
+    }
+}, false);
 
+function delay() {
+    if (confirm('确定提交吗？')) {
+        form.submit()
+    };
+}
